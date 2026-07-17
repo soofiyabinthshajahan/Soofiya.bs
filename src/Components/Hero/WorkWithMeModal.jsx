@@ -97,7 +97,7 @@ function WorkWithMeModal({ onClose }) {
 
           {/* New Resume Upload Interface Field */}
           <div className="hero-input-group">
-            <label className="hero-modal-label uppercase">Upload Resume</label>
+            <label className="hero-modal-label uppercase">Upload Resume / Proposal</label>
             <div className="custom-file-upload">
               <input
                 type="file"
