@@ -12,7 +12,7 @@ const coursesData = [
     title: "Agentic AI Engineering",
     subtitle: "Building Autonomous Workflows & Multi-Agent Frameworks",
     tagline: "Advanced Engineering",
-    duration: "24 Weeks - Daily 8hrs"
+    duration: "24 Weeks"
   },
   {
     title: "Claude Mastery",
@@ -24,13 +24,13 @@ const coursesData = [
     title: "Generative AI",
     subtitle: "Mastering LLMs, Vector Databases, and RAG Systems",
     tagline: "Core Engineering",
-    duration: "24 Weeks - Daily 8hrs"
+    duration: "24 Weeks"
   },
   {
     title: "AI Powered MERN Stack Development",
     subtitle: "Production-Grade Web Apps from Architecture to Deployment",
     tagline: "Development Core",
-    duration: "24 Weeks - Daily 8hrs"
+    duration: "24 Weeks"
   },
   {
     title: "AI for Entrepreneurs",
