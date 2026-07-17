@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Hero.css";
 import Background from "../../assets/images/Herobg.png";
+import WorkWithMeModal from "./WorkWithMeModal"; // Importing the new sub-component
 import {
   FaReact,
   FaJsSquare,
@@ -8,9 +9,18 @@ import {
   FaDatabase,
   FaGithub,
 } from "react-icons/fa";
-import { SiTensorflow } from "react-icons/si"; // TensorFlow is in the SimpleIcons set
+import { SiTensorflow } from "react-icons/si"; 
 
 function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleSecureSpotClick = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div
       style={{ backgroundImage: `url(${Background})` }}
@@ -33,16 +43,13 @@ function Hero() {
               <i className="fa fa-robot" aria-hidden="true"></i> AI Engineer
             </span>
             <span className="info-badge uppercase">
-              <i className="fa fa-code" aria-hidden="true"></i> Software
-              Engineer
+              <i className="fa fa-code" aria-hidden="true"></i> Software Engineer
             </span>
             <span className="info-badge uppercase">
-              <i className="fa fa-chalkboard-teacher" aria-hidden="true"></i>{" "}
-              Technical Trainer
+              <i className="fa fa-chalkboard-teacher" aria-hidden="true"></i> Technical Trainer
             </span>
             <span className="info-badge uppercase">
-              <i className="fa fa-pencil-alt" aria-hidden="true"></i> Content
-              Creator
+              <i className="fa fa-pencil-alt" aria-hidden="true"></i> Content Creator
             </span>
           </div>
 
@@ -55,17 +62,16 @@ function Hero() {
           </div>
 
           <div className="action-buttons">
-            <button className="primary-btn">
+            <button className="primary-btn" onClick={handleSecureSpotClick}>
               <span>Secure Your Spot</span>
               <div className="circle-arrow-mini">
                 <span className="arrow-icon-mini">→</span>
               </div>
             </button>
-            <button className="secondary-btn">
+            <button className="secondary-btn" onClick={() => setIsModalOpen(true)}>
               Work with Me{" "}
               <i className="fa fa-arrow-right" aria-hidden="true"></i>
             </button>
-             
           </div>
 
           <div className="stats-container">
@@ -103,6 +109,10 @@ function Hero() {
           </div>
         </div>
       </div>
+
+      {isModalOpen && (
+        <WorkWithMeModal onClose={() => setIsModalOpen(false)} />
+      )}
     </div>
   );
 }
