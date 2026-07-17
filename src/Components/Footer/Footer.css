@@ -1,0 +1,103 @@
+/* Color Palette Reference
+   Cream Canvas: #F7F5F0
+   Deep Espresso Brown: #4A3321
+   Warm Muted Gold-Beige: #B58E63
+   Soft Earth Timber: #8C6D53
+*/
+
+.footer-section {
+  width: 100%;
+  background-color: #F7F5F0; 
+  padding: 60px 8% 40px 8%;
+  box-sizing: border-box;
+  font-family: 'Open Sans', -apple-system, sans-serif;
+  color: #4A3321;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.serif-font {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+}
+
+/* Main Top Row Configuration */
+.footer-main-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid rgba(74, 51, 33, 0.1); 
+  padding-top: 40px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-logo {
+  font-size: 1.6rem;
+  color: #4A3321;
+  letter-spacing: -0.3px;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: #8C6D53; 
+  margin: 0;
+}
+
+/* Bottom Structural Copyright & Icons Section */
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(74, 51, 33, 0.05);
+  padding-top: 30px;
+}
+
+.copyright-text {
+  font-size: 0.85rem;
+  color: rgba(74, 51, 33, 0.6);
+  margin: 0;
+}
+
+/* Social Icon Blocks */
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon-link {
+  color: #8C6D53;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon-link:hover {
+  color: #4A3321;
+  transform: translateY(-2px);
+}
+
+/* Responsive Scaling Constraints */
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 60px 24px 30px 24px;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}

@@ -1,0 +1,268 @@
+/* Color Palette Reference
+   Background Canvas: #F7F5F0
+   Card Components: #FFFFFF
+   Espresso Typography: #4A3321
+   Gold Muted Accent: #B58E63
+   Soft Timber Text: #8C6D53
+*/
+
+.services-section {
+  width: 100%;
+  background-color: #F7F5F0;
+  padding: 80px 8%;
+  box-sizing: border-box;
+  font-family: 'Open Sans', -apple-system, sans-serif;
+  color: #4A3321;
+}
+
+.services-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.serif-font {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.section-label {
+  color: #B58E63;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.services-minimal-header {
+  border-bottom: 1px solid rgba(74, 51, 33, 0.08);
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Split Workspace layout mechanics */
+.services-split-workspace {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* Navigation Row Pane styles */
+.services-navigation-pane {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 16px;
+  border-bottom: 1px solid rgba(74, 51, 33, 0.06);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 12px;
+}
+
+.nav-number {
+  font-size: 1.3rem;
+  color: rgba(181, 142, 99, 0.4);
+  transition: color 0.3s;
+}
+
+.nav-text-block {
+  flex-grow: 1;
+}
+
+.nav-tagline {
+  font-size: 0.65rem;
+  color: #B58E63;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.nav-title {
+  font-size: 1.35rem;
+  margin: 0;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.nav-indicator-arrow {
+  font-size: 1.2rem;
+  color: #8C6D53;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s;
+}
+
+/* Hover and Contextual Row Activation States */
+.nav-item-row:hover, 
+.active-row {
+  background-color: #FFFFFF;
+  padding-left: 24px;
+  box-shadow: 0 8px 24px rgba(74, 51, 33, 0.02);
+}
+
+.active-row .nav-number {
+  color: #B58E63;
+}
+
+.active-row .nav-title {
+  color: #4A3321;
+  font-weight: 500;
+}
+
+.active-row .nav-indicator-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: #B58E63;
+}
+
+/* Sticky Right Hand Presentation Box Layout */
+.services-preview-pane {
+  position: sticky;
+  top: 40px; /* Locks module securely into viewport window scope */
+}
+
+.preview-card-inner {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid rgba(74, 51, 33, 0.04);
+  box-shadow: 0 10px 40px rgba(74, 51, 33, 0.03);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: previewFade 0.4s ease-out;
+}
+
+@keyframes previewFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.preview-tagline {
+  color: #B58E63;
+  font-size: 0.65rem;
+}
+
+.preview-title {
+  font-size: 1.8rem;
+  margin: 8px 0 16px 0;
+  line-height: 1.2;
+}
+
+.preview-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #8C6D53;
+  margin: 0 0 24px 0;
+}
+
+.preview-deliverables {
+  margin-bottom: 32px;
+}
+
+.deliverables-heading {
+  font-size: 0.65rem;
+  color: #4A3321;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.preview-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preview-list-item {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bullet-dot {
+  color: #B58E63;
+}
+
+/* Interactive Embedded Custom Reset Button Rules */
+.preview-action-trigger {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 4px 4px 4px 20px;
+  margin: 0;
+  cursor: pointer;
+  background-color: #4A3321;
+  color: #FFFFFF;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preview-circle-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: #4A3321;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.preview-arrow-icon {
+  font-size: 1rem;
+}
+
+.preview-action-trigger:hover {
+  background-color: #B58E63;
+}
+
+.preview-action-trigger:hover .preview-arrow-icon {
+  transform: rotate(-45deg);
+}
+
+/* Fallback adaptive layout handling for tablets and phones */
+@media (max-width: 960px) {
+  .services-split-workspace {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-preview-pane {
+    position: static;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 60px 24px;
+  }
+}

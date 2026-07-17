@@ -1,0 +1,124 @@
+/* Color Palette Reference
+   Background Circles: #FFFFFF
+   Deep Espresso Brown (Icons/Text): #4A3321
+   Warm Muted Gold-Beige (Hover states): #B58E63
+   Soft Borders: rgba(74, 51, 33, 0.08)
+*/
+
+.floating-navbar {
+  position: fixed;
+  right: 32px; /* Positioned on the right edge exactly like the inspiration image */
+  top: 50%;
+  transform: translateY(-50%); /* Centers vertically on the screen */
+  z-index: 9999; /* Keeps it layered safely above all portfolio contents */
+  font-family: 'Open Sans', -apple-system, sans-serif;
+}
+
+.navbar-dock {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Symmetrical separation space between layout modules */
+}
+
+/* Base structural properties for each circular icon link */
+.nav-icon-link {
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* High-end Minimal Circular Button Frame */
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #FFFFFF; /* Balanced white card matching your theme */
+  border: 1px solid rgba(74, 51, 33, 0.06);
+  color: #4A3321; /* Rich deep espresso base tone */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 20px rgba(74, 51, 33, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover State Changes */
+.nav-icon-link:hover .icon-circle {
+  background-color: #4A3321; /* Swaps to deep espresso */
+  color: #FFFFFF;            /* Icons pop to high-contrast white */
+  transform: scale(1.08) translateX(-2px);
+  box-shadow: 0 10px 25px rgba(74, 51, 33, 0.12);
+}
+
+/* Beautiful Editorial Text Tooltip Label */
+.nav-icon-link::before {
+  content: attr(data-label);
+  position: absolute;
+  right: 64px; /* Renders out to the left of the button */
+  background-color: #4A3321;
+  color: #F7F5F0; /* Soft warm-cream typography */
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(74, 51, 33, 0.1);
+}
+
+/* Tooltip Reveal on Hover */
+.nav-icon-link:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive constraints: pushes the floating navbar to bottom tab layout on small phones */
+@media (max-width: 768px) {
+  .floating-navbar {
+    right: 0;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    transform: none;
+    width: 100%;
+    background-color: rgba(247, 245, 240, 0.95); /* Soft beige bottom bar background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(74, 51, 33, 0.08);
+    padding: 12px 24px;
+    box-sizing: border-box;
+  }
+
+  .navbar-dock {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  .icon-circle {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .nav-icon-link:hover .icon-circle {
+    background-color: transparent;
+    color: #B58E63; /* Subtle shift color rather than full fill transformation on mobile touch */
+    transform: none;
+  }
+
+  /* Disables text labels completely on compact screens to optimize space */
+  .nav-icon-link::before {
+    display: none;
+  }
+}

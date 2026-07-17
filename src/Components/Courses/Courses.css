@@ -1,0 +1,265 @@
+/* Color Palette Reference
+   Cream Canvas: #F7F5F0
+   Deep Espresso Brown: #4A3321
+   Warm Muted Gold-Beige: #B58E63
+   Soft Earth Timber: #8C6D53
+*/
+
+.courses-section {
+  width: 100%;
+  background-color: #F7F5F0;
+  padding: 100px 8%;
+  box-sizing: border-box;
+  font-family: 'Open Sans', -apple-system, sans-serif;
+  color: #4A3321;
+}
+
+.courses-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Shared Editorial Typography */
+.serif-font {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+}
+
+.italic-accent {
+  font-style: italic;
+  color: #B58E63;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Header Row Style */
+.courses-header-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(74, 51, 33, 0.1);
+  padding-bottom: 45px;
+  margin-bottom: 30px;
+}
+
+.section-label {
+  color: #B58E63;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin: 0;
+  color: #4A3321;
+  letter-spacing: -0.5px;
+}
+
+.header-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(74, 51, 33, 0.8);
+  margin: 0;
+}
+
+/* Structural Rows for Curriculum List */
+.courses-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.course-editorial-row {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(74, 51, 33, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.course-editorial-row:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 12px;
+  border-bottom-color: transparent;
+  box-shadow: 0 8px 24px rgba(74, 51, 33, 0.02);
+}
+
+/* Left Column Meta */
+.course-row-meta {
+  display: flex;
+  align-items: center;
+}
+
+.course-tagline {
+  font-size: 0.65rem;
+  color: #B58E63;
+}
+
+/* Middle Column Content */
+.course-row-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.course-row-title {
+  font-size: 1.4rem;
+  color: #4A3321;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+}
+
+.course-row-subtitle {
+  font-size: 0.9rem;
+  color: #8C6D53;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Right Column Action Integration */
+.course-row-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.course-duration {
+  font-size: 0.7rem;
+  color: rgba(74, 51, 33, 0.6);
+  font-weight: 700;
+}
+
+.course-action-btn {
+  text-decoration: none;
+}
+
+.c-circle-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: #8C6D53;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(140, 109, 83, 0.15);
+}
+
+.c-arrow-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Interactive Hover Animations */
+.course-editorial-row:hover .c-circle-arrow {
+  background-color: #4A3321;
+  border-color: #4A3321;
+  color: #FFFFFF;
+}
+
+.course-editorial-row:hover .c-arrow-icon {
+  transform: rotate(-45deg);
+}
+
+/* Responsive Adaptive Viewports */
+@media (max-width: 960px) {
+  .courses-header-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .course-editorial-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 0;
+  }
+  
+  .course-row-action {
+    justify-content: flex-start;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-section {
+    padding: 60px 24px;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Update or add these specific rules in your existing Courses.css file */
+
+.course-row-action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+}
+
+.course-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: #8C6D53; /* Soft earth timber brown */
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: color 0.3s ease;
+}
+
+.course-btn-text {
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover States inside the structural row wrapper */
+.course-editorial-row:hover .course-btn-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.course-editorial-row:hover .course-action-btn {
+  color: #4A3321; /* Rich Espresso highlight on text hover */
+}
+
+.course-editorial-row:hover .c-circle-arrow {
+  background-color: #4A3321;
+  border-color: #4A3321;
+  color: #FFFFFF;
+}
+
+.course-editorial-row:hover .c-arrow-icon {
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 960px) {
+  .course-btn-text {
+    opacity: 1;
+    transform: none;
+  }
+}

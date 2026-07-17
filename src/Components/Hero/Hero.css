@@ -1,0 +1,288 @@
+/* Color Palette:
+   Base Typography (Espresso): #4A3321
+   Muted Accent (Gold-Beige): #B58E63
+   Body / Subtle Text (Timber): #8C6D53
+   Glass Panel Background: rgba(247, 245, 240, 0.85)
+*/
+
+.Container {
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+body {
+  font-family: 'Open Sans', -apple-system, sans-serif;
+  margin: 0;
+  background-color: #F7F5F0;
+}
+
+/* Left side glass panel shifted to match the warm-cream brand palette */
+.left {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  box-sizing: border-box;
+  
+  /* Soft warm semi-transparent beige overlay instead of dark brown */
+  background: linear-gradient(
+    90deg,
+    rgba(247, 245, 240, 0.92) 0%,
+    rgba(247, 245, 240, 0.85) 50%,
+    rgba(247, 245, 240, 0.4) 85%,
+    rgba(247, 245, 240, 0) 100%
+  );
+
+  backdrop-filter: blur(8px) saturate(110%);
+  -webkit-backdrop-filter: blur(8px) saturate(110%);
+    box-shadow: 0 8px 32px rgba(74, 51, 33, 0.05);
+  z-index: 2;
+}
+
+.content-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 540px;
+}
+
+/* Typography styles */
+.serif-font {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400; /* Replaced heavy bold with an elegant regular weight */
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.greeting {
+  color: #8C6D53;
+  margin: 0;
+}
+
+.highlight-text {
+  color: #B58E63;
+  font-weight: 400;
+}
+
+.italic-accent {
+  font-style: italic;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Adjusted Headline style: thinner and cleaner */
+.main-headline {
+  font-size: 2.35rem; /* Downscaled to prevent bulkiness */
+  line-height: 1.25;
+  margin: 0;
+  color: #4A3321; /* Espresso brown */
+  letter-spacing: -0.3px;
+  font-weight: 400;
+}
+
+.description {
+  color: #8C6D53; /* Soft earth timber text */
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.description p {
+  margin: 0;
+}
+
+/* Minimalist Pill Badges */
+.badges-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.info-badge {
+  background-color: rgba(181, 142, 99, 0.08); /* Faint gold-beige tint */
+  color: #8C6D53;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(181, 142, 99, 0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-badge i {
+  color: #B58E63;
+}
+
+/* Interactive Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.primary-btn {
+  background-color: #4A3321; /* Rich Espresso Base */
+  color: #FFFFFF;
+  border: none;
+  padding: 5px 5px 5px 20px; /* Asymmetric formatting from our submit button */
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(74, 51, 33, 0.1);
+}
+
+.primary-btn:hover {
+  background-color: #B58E63;
+  box-shadow: 0 8px 20px rgba(181, 142, 99, 0.2);
+}
+
+.circle-arrow-mini {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: #4A3321;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon-mini {
+  font-size: 0.9rem;
+}
+
+.primary-btn:hover .circle-arrow-mini {
+  transform: rotate(-45deg);
+}
+
+.secondary-btn {
+  background: none;
+  color: #8C6D53;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.secondary-btn:hover {
+  color: #4A3321;
+}
+
+.secondary-btn i {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.secondary-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* Redesigned minimal Stats Container with faint framing */
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(74, 51, 33, 0.04);
+  backdrop-filter: blur(4px);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 24px;
+  background-color: rgba(74, 51, 33, 0.08);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.75rem; /* Downscaled values to make it feel light and clean */
+  font-weight: 400;
+  color: #4A3321;
+}
+
+.stat-label {
+  font-size: 0.6rem;
+  color: #8C6D53;
+}
+
+/* Minimalist Tech Section */
+.tech-section {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tech-heading {
+  font-size: 0.65rem;
+  color: #8C6D53;
+  margin: 0;
+}
+
+.tech-icons {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 1.35rem; /* Compact size */
+  color: #8C6D53;
+}
+
+.tech-icons i {
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-icons i:hover {
+  color: #B58E63;
+  transform: translateY(-2px);
+}
+
+/* Responsive Rules for Tablet and Mobile layout */
+@media (max-width: 1024px) {
+  .left {
+    width: 75%;
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .left {
+    width: 100%;
+    padding: 40px 24px;
+    background: #F7F5F0; /* Fallback flat base color on small formats */
+  }
+  .main-headline {
+    font-size: 2rem;
+  }
+  .stats-container {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .stat-divider {
+    display: none;
+  }
+}

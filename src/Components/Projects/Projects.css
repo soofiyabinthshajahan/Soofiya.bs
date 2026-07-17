@@ -1,0 +1,373 @@
+/* Color Palette Reference
+   Cream Canvas: #F7F5F0
+   Deep Espresso Brown: #4A3321
+   Warm Muted Gold-Beige: #B58E63
+   Soft Earth Timber: #8C6D53
+*/
+
+.projects-section {
+  width: 100%;
+  background-color: #F7F5F0; /* Soft warm-cream backdrop */
+  padding: 120px 8%;
+  box-sizing: border-box;
+  font-family: 'Open Sans', -apple-system, sans-serif;
+  color: #4A3321;
+}
+
+.projects-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Shared Editorial Typography */
+.serif-font {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+}
+
+.italic-accent {
+  font-style: italic;
+  color: #B58E63;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Header Row - Aligns perfectly with the Services Header */
+.projects-header-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(74, 51, 33, 0.1);
+  padding-bottom: 45px;
+  margin-bottom: 40px;
+}
+
+.section-label {
+  color: #B58E63;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin: 0;
+  color: #4A3321;
+  letter-spacing: -0.5px;
+}
+
+.header-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(74, 51, 33, 0.8);
+  margin: 0;
+}
+
+/* Showcase List: Architectural Horizontal Rows */
+.projects-showcase-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.project-editorial-row {
+  display: grid;
+  grid-template-columns: 0.8fr 2fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(74, 51, 33, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-editorial-row:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 16px;
+  border-bottom-color: transparent;
+  box-shadow: 0 10px 30px rgba(74, 51, 33, 0.02);
+}
+
+/* Left Segment (Index & Discipline) */
+.project-row-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-index {
+  font-size: 2.5rem;
+  color: rgba(181, 142, 99, 0.3);
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.project-editorial-row:hover .project-index {
+  color: #B58E63;
+}
+
+.project-category {
+  font-size: 0.7rem;
+  color: #8C6D53;
+  font-weight: 700;
+}
+
+/* Middle Segment (Information & Tech Pills) */
+.project-row-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-tagline {
+  font-size: 0.65rem;
+  color: #B58E63;
+}
+
+.project-row-title {
+  font-size: 1.8rem;
+  color: #4A3321;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+
+.project-row-desc {
+  font-size: 0.95rem;
+  color: rgba(74, 51, 33, 0.75);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 680px;
+}
+
+.project-tech-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.tech-pill {
+  font-size: 0.6rem;
+  color: #8C6D53;
+  background-color: rgba(140, 109, 83, 0.08);
+  border: 1px solid rgba(140, 109, 83, 0.12);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+/* Right Segment (Action & Navigation Arrow) */
+.project-row-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #8C6D53;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.p-btn-text {
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.p-circle-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: #8C6D53;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(140, 109, 83, 0.2);
+}
+
+.p-arrow-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Micro-interactions */
+.project-editorial-row:hover .p-btn-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.project-editorial-row:hover .project-action-btn {
+  color: #4A3321;
+}
+
+.project-editorial-row:hover .p-circle-arrow {
+  background-color: #4A3321;
+  border-color: #4A3321;
+  color: #FFFFFF;
+}
+
+.project-editorial-row:hover .p-arrow-icon {
+  transform: rotate(-45deg);
+}
+
+/* Responsive Layout Mapping */
+@media (max-width: 1024px) {
+  .projects-header-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .project-editorial-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 40px 0;
+  }
+
+  .project-row-action {
+    justify-content: flex-start;
+  }
+
+  .p-btn-text {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 80px 24px;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Right Segment Action Stack Wrapper */
+.project-row-action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.project-action-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px; /* Spacing between the button and the contribution link */
+}
+
+/* Secondary Collaboration Text Link Styling */
+.project-contribute-link {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #B58E63; /* Warm gold-beige */
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(181, 142, 99, 0.4);
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  /* Kept hidden until the row is hovered to maintain minimal editorial canvas */
+  opacity: 0;
+  transform: translateY(5px);
+}
+
+/* Hover reveal mechanics inside the structural row wrapper */
+.project-editorial-row:hover .project-contribute-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-contribute-link:hover {
+  color: #4A3321; /* Sharp contrast change to deep espresso on direct hover */
+  border-bottom-color: #4A3321;
+}
+
+/* Responsive Overrides for smaller devices */
+@media (max-width: 1024px) {
+  .project-row-action {
+    justify-content: flex-start;
+  }
+  
+  .project-action-stack {
+    align-items: flex-start;
+  }
+
+  .project-contribute-link {
+    opacity: 1;
+    transform: none;
+    margin-top: 4px;
+  }
+}
+/* View More Projects Layout Button Styling */
+.projects-action-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px; /* Provides breathing room below the project list rows */
+}
+
+.view-more-projects-btn {
+  padding: 6px 6px 6px 24px;
+  background-color: transparent;
+  color: #4A3321; /* Rich Espresso Typography */
+  border: 1px solid rgba(74, 51, 33, 0.2);
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.view-more-projects-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #4A3321;
+  color: #F7F5F0; /* Soft Warm Cream */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.view-more-projects-arrow {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Button Interactive States */
+.view-more-projects-btn:hover {
+  background-color: #4A3321;
+  color: #FFFFFF;
+  border-color: #4A3321;
+  box-shadow: 0 10px 20px rgba(74, 51, 33, 0.08);
+}
+
+.view-more-projects-btn:hover .view-more-projects-circle {
+  background-color: #FFFFFF;
+  color: #4A3321;
+}
+
+.view-more-projects-btn:hover .view-more-projects-arrow {
+  transform: translateY(3px); /* Points downwards indicating extension expansion */
+}

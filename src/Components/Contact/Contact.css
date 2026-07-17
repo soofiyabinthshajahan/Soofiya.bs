@@ -1,0 +1,249 @@
+/* Color Palette Reference
+   Cream Canvas: #F7F5F0
+   Card Background: #FFFFFF
+   Deep Espresso Brown: #4A3321
+   Warm Muted Gold-Beige: #B58E63
+   Soft Earth Timber: #8C6D53
+*/
+
+.contact-section {
+  width: 100%;
+  background-color: #F7F5F0; /* Soft warm-cream backdrop */
+  padding: 60px 8%;
+  box-sizing: border-box;
+  font-family: 'Open Sans', -apple-system, sans-serif;
+}
+
+.contact-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Typography styles matching Hero and Services */
+.serif-font {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+}
+
+.italic-accent {
+  font-style: italic;
+  color: #B58E63;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Left Column Styling */
+.contact-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-title {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #4A3321;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.contact-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(74, 51, 33, 0.8);
+  margin: 0;
+}
+
+.direct-contact-details {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-top: 1px solid rgba(74, 51, 33, 0.1);
+  padding-top: 30px;
+}
+
+.contact-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-label {
+  color: #B58E63;
+  font-size: 0.7rem;
+}
+
+.detail-value {
+  font-size: 1.25rem;
+  color: #4A3321;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.detail-value:hover {
+  color: #B58E63;
+}
+
+.text-muted {
+  color: rgba(74, 51, 33, 0.7);
+}
+
+/* Right Column Form Card (Structured White Rounded Card) */
+.contact-form-column {
+  width: 100%;
+}
+
+.contact-form-card {
+  background-color: #FFFFFF;
+  border-radius: 24px; /* Generous curve matching the services grid */
+  padding: 48px;
+  box-sizing: border-box;
+  border: 1px solid rgba(74, 51, 33, 0.04);
+  box-shadow: 0 10px 40px rgba(74, 51, 33, 0.03);
+}
+
+/* Form Groups & Inputs */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.form-label {
+  color: #8C6D53; /* Soft earth timber */
+  font-size: 0.65rem;
+}
+
+.form-input, 
+.form-select {
+  width: 100%;
+  padding: 14px 18px;
+  background-color: #F7F5F0; /* Soft contrast inside the white card */
+  border: 1px solid rgba(74, 51, 33, 0.05);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #4A3321;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: rgba(74, 51, 33, 0.4);
+}
+
+.form-input:focus, 
+.form-select:focus {
+  outline: none;
+  border-color: rgba(181, 142, 99, 0.5); /* Soft gold on focus */
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(181, 142, 99, 0.05);
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+/* Clean Custom Dropdown arrow handling */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "▼";
+  font-size: 0.7rem;
+  color: #8C6D53;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+/* Elegant Forma-Stairs Inspired Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 6px 6px 6px 24px; /* Generous left padding, tight border padding */
+  background-color: #4A3321; /* Rich deep espresso base */
+  color: #FFFFFF;
+  border: none;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.submit-btn-text {
+  transition: transform 0.3s ease;
+}
+
+.submit-circle-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: #4A3321;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.submit-arrow-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Submit Button Hover States */
+.submit-btn:hover {
+  background-color: #B58E63; /* Transitions to warm gold-beige */
+  box-shadow: 0 10px 20px rgba(181, 142, 99, 0.2);
+}
+
+.submit-btn:hover .submit-arrow-icon {
+  transform: rotate(-45deg); /* Matching your cards' interactive dynamics */
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 80px 24px;
+  }
+  
+  .contact-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-form-card {
+    padding: 30px 24px;
+  }
+}
