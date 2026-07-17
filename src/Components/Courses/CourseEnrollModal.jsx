@@ -13,22 +13,37 @@ function CourseEnrollModal({ course, onClose }) {
     setEnrollmentData({ ...enrollmentData, [e.target.name]: e.target.value });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(`Cohort Enrollment Request for [${course.title}]:`, enrollmentData);
-    // Integration logic path for Form Spree, EmailJS or API endpoints goes here
-    onClose();
+
+    const formData = new URLSearchParams();
+    formData.append("formType", "Courses");
+    formData.append("courseTitle", course.title);
+    formData.append("name", enrollmentData.name);
+    formData.append("email", enrollmentData.email);
+    formData.append("objective", enrollmentData.objective);
+    formData.append("message", enrollmentData.message);
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbxtHhuY9U0X47MFZdrR8O14X8vDgM7FRKgqfU5XM0lN19UemnNA5LD1j3rSI1xz4pujbQ/exec", {
+      method: "POST",
+      body: formData,
+      mode: "no-cors"
+    });
+      alert("Application submitted successfully!");
+      onClose();
+    } catch (err) {
+      console.error("Error submitting enrollment", err);
+      alert("Submission failed. Please try again.");
+    }
   };
 
   return (
     <div className="c-modal-overlay" onClick={onClose}>
       <div className="c-modal-wrapper" onClick={(e) => e.stopPropagation()}>
-        
         <button className="c-modal-close-btn" onClick={onClose} aria-label="Close modal">✕</button>
         
         <div className="c-modal-grid">
-          
-          {/* Left Side: Syllabus Breakdown & Duration Stats */}
           <div className="c-modal-info-pane">
             <div className="c-modal-meta-row">
               <span className="c-modal-tagline uppercase">{course.tagline}</span>
@@ -49,7 +64,6 @@ function CourseEnrollModal({ course, onClose }) {
             </div>
           </div>
 
-          {/* Right Side: Spot Booking Form Card Layout */}
           <div className="c-modal-form-pane">
             <span className="c-form-pane-label uppercase">Registration Desk</span>
             <h4 className="c-form-pane-title serif-font">Secure Your Spot</h4>
@@ -63,7 +77,7 @@ function CourseEnrollModal({ course, onClose }) {
                   required 
                   value={enrollmentData.name} 
                   onChange={handleChange} 
-                  placeholder="Soofiya Binth Shajahan"
+                  placeholder="Alex Mercer"
                   className="c-modal-input"
                 />
               </div>
@@ -76,7 +90,7 @@ function CourseEnrollModal({ course, onClose }) {
                   required 
                   value={enrollmentData.email} 
                   onChange={handleChange} 
-                  placeholder="soofiyashajahan@gmail.com"
+                  placeholder="alex@example.com"
                   className="c-modal-input"
                 />
               </div>
@@ -105,7 +119,7 @@ function CourseEnrollModal({ course, onClose }) {
                   rows="3" 
                   value={enrollmentData.message} 
                   onChange={handleChange} 
-                  placeholder="Tell me briefly about your current programming proficiency..."
+                  placeholder="Tell me briefly about your current proficiency..."
                   className="c-modal-textarea"
                 />
               </div>
@@ -118,7 +132,6 @@ function CourseEnrollModal({ course, onClose }) {
               </button>
             </form>
           </div>
-
         </div>
       </div>
     </div>

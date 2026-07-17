@@ -13,23 +13,37 @@ function ServiceDetailModal({ service, onClose }) {
     setBookingData({ ...bookingData, [e.target.name]: e.target.value });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(`Booking for ${service.title}:`, bookingData);
-    // Add integrated notification or submission trigger here
-    onClose();
+    
+    const formData = new URLSearchParams();
+    formData.append("formType", "Services");
+    formData.append("serviceTitle", service.title);
+    formData.append("name", bookingData.name);
+    formData.append("email", bookingData.email);
+    formData.append("timeline", bookingData.timeline);
+    formData.append("message", bookingData.message);
+
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbxtHhuY9U0X47MFZdrR8O14X8vDgM7FRKgqfU5XM0lN19UemnNA5LD1j3rSI1xz4pujbQ/exec", {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+      });
+      alert("Inquiry submitted successfully!");
+      onClose();
+    } catch (err) {
+      console.error("Error submitting form", err);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-wrapper" onClick={(e) => e.stopPropagation()}>
-        
-        {/* Close Button Trigger */}
         <button className="modal-close-btn" onClick={onClose} aria-label="Close modal">✕</button>
         
         <div className="modal-grid">
-          
-          {/* Left Side: Specific Service Deep Dive */}
           <div className="modal-info-pane">
             <span className="modal-tagline uppercase">{service.tagline}</span>
             <h3 className="modal-service-title serif-font">{service.title}</h3>
@@ -47,7 +61,6 @@ function ServiceDetailModal({ service, onClose }) {
             </div>
           </div>
 
-          {/* Right Side: Service Booking Form Layout */}
           <div className="modal-form-pane">
             <span className="form-pane-label uppercase">Direct Request</span>
             <h4 className="form-pane-title serif-font">Secure Your Slot</h4>
@@ -61,7 +74,7 @@ function ServiceDetailModal({ service, onClose }) {
                   required 
                   value={bookingData.name} 
                   onChange={handleChange} 
-                  placeholder="Jane Doe"
+                  placeholder="Soofiya Binth Shajahan"
                   className="modal-input"
                 />
               </div>
@@ -74,13 +87,13 @@ function ServiceDetailModal({ service, onClose }) {
                   required 
                   value={bookingData.email} 
                   onChange={handleChange} 
-                  placeholder="jane@example.com"
+                  placeholder="Soofiyashajahan@gmail.com"
                   className="modal-input"
                 />
               </div>
 
               <div className="modal-input-group">
-                <label className="modal-label uppercase">Desired Target Timeline</label>
+                <label className="modal-label uppercase">Desired Joining Timeline</label>
                 <select 
                   name="timeline" 
                   value={bookingData.timeline} 
@@ -89,7 +102,7 @@ function ServiceDetailModal({ service, onClose }) {
                 >
                   <option value="immediate">Immediate (Within 2 weeks)</option>
                   <option value="next-month">Next Month</option>
-                  <option value="flexible">Flexible / Self-Paced</option>
+                  <option value="flexible">Quick call for details</option>
                 </select>
               </div>
 
@@ -100,7 +113,7 @@ function ServiceDetailModal({ service, onClose }) {
                   rows="3" 
                   value={bookingData.message} 
                   onChange={handleChange} 
-                  placeholder="Briefly share your learning goals or workflow expectations..."
+                  placeholder="Briefly share your learning goals..."
                   className="modal-textarea"
                 />
               </div>
@@ -113,7 +126,6 @@ function ServiceDetailModal({ service, onClose }) {
               </button>
             </form>
           </div>
-
         </div>
       </div>
     </div>
